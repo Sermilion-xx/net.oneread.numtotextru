@@ -64,8 +64,9 @@ public class NTTRussianProcessor implements NTTProcessor {
             try {
                 if (!isNum(word)) {
                     throw new NanException(word);
+                }else {
+                    processedItems.add(numToString(Integer.valueOf(word)));
                 }
-                processedItems.add(numToString(Integer.valueOf(word)));
             }catch (NanException e){
                 e.printStackTrace();
             }
