@@ -1,6 +1,10 @@
 package net.oneread.numtotext;
 
+import net.oneread.numtotext.Exception.NanException;
 import net.oneread.numtotext.Exception.NumberOverTrillionException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -247,12 +251,8 @@ public class RussianNumbersTests {
         assertTrue(result.equals("один триллион"));
     }
 
-    @org.junit.Test(expected=NumberOverTrillionException.class)
-    public void shouldReturnExceptionFor1000000000001(){
-        init();
-        numbersProcessor.numToString(1000000000001L);
 
-    }
+
 
 
 }

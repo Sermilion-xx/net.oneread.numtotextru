@@ -12,8 +12,14 @@ package net.oneread.numtotext.Exception;
 
 public class NanException extends IllegalArgumentException {
 
+    private String input;
+
+    public NanException(String input){
+        this.input = input;
+    }
+
     @Override
     public String getMessage() {
-        return "Input is not a number";
+        return "Input is not a number: "+input;
     }
 }

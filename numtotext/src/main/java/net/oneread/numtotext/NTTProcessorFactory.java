@@ -14,7 +14,7 @@ import net.oneread.numtotext.Interfaces.NTTProcessor;
 
 public class NTTProcessorFactory {
 
-    static NTTProcessor getRussianProcessor(){
+    public static NTTProcessor getRussianProcessor(){
         return NTTRussianProcessor.getInstance();
     }
 

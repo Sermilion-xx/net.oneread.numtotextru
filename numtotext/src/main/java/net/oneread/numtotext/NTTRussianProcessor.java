@@ -61,10 +61,14 @@ public class NTTRussianProcessor implements NTTProcessor {
     public List<String> process(List<String> items) throws NanException {
         List<String> processedItems = new ArrayList<>();
         for (String word : items) {
-            if(!isNum(word)){
-                throw new NanException();
+            try {
+                if (!isNum(word)) {
+                    throw new NanException(word);
+                }
+                processedItems.add(numToString(Integer.valueOf(word)));
+            }catch (NanException e){
+                e.printStackTrace();
             }
-            processedItems.add(numToString(Integer.valueOf(word)));
         }
         return processedItems;
     }
