@@ -3,14 +3,14 @@ This is a small library that will translate integer numbers into its string repr
 
 To use simply copy the .arr file into lib folder and include:
 
-''''allprojects {
+````allprojects {
     repositories {
         jcenter()
         flatDir {
             dirs 'libs'
         }
     }
-}''''
+}````
 
 and 
 
