@@ -11,7 +11,7 @@ import java.util.List;
  * <a href="http://www.github.com/sermilion>github</a>
  * ---------------------------------------------------
  */
-@FunctionalInterface
-public interface NTTProcessor {
-    List<String> process(List<String> items);
+
+public interface NTTNumToTextProcessor {
+    List<String> process(List<Long> items);
 }

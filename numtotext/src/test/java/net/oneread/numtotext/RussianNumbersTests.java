@@ -1,10 +1,7 @@
 package net.oneread.numtotext;
 
-import net.oneread.numtotext.Exception.NanException;
-import net.oneread.numtotext.Exception.NumberOverTrillionException;
-
-import java.util.ArrayList;
-import java.util.List;
+import net.oneread.numtotext.Processors.NTTProcessorFactory;
+import net.oneread.numtotext.Processors.NTTRussianNumToTextNumToTextProcessor;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -20,10 +17,10 @@ import static junit.framework.Assert.assertTrue;
 
 public class RussianNumbersTests {
 
-    private NTTRussianProcessor numbersProcessor;
+    private NTTRussianNumToTextNumToTextProcessor numbersProcessor;
 
     private void init(){
-        numbersProcessor = (NTTRussianProcessor) NTTProcessorFactory.getRussianProcessor();
+        numbersProcessor = (NTTRussianNumToTextNumToTextProcessor) NTTProcessorFactory.getRussianNumToTextProcessor();
     }
 
     @org.junit.Test

@@ -15,3 +15,5 @@ To use simply copy the .arr file into lib folder and include:
 and 
 
 ````compile(name:'net.oneread.surfstudio.test.numtotext', ext:'aar')````
+
+to you build.gradle file.

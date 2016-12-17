@@ -1,4 +1,4 @@
-package net.oneread.numtotext;
+package net.oneread.numtotext.Demo;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
@@ -17,7 +17,7 @@ import java.io.UnsupportedEncodingException;
  * ---------------------------------------------------
  */
 
-public class NTTWriter {
+class NTTWriter {
 
     private PrintWriter writer = null;
 

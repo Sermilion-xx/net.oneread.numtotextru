@@ -1,10 +1,10 @@
-package net.oneread.numtotext;
+package net.oneread.numtotext.Interfaces;
 
-import net.oneread.numtotext.Interfaces.NTTProcessor;
+import java.util.List;
 
 /**
  * ---------------------------------------------------
- * Created by Sermilion on 14/12/2016.
+ * Created by Sermilion on 17/12/2016.
  * Project: Library
  * ---------------------------------------------------
  * <a href="http://www.ucomplex.org">ucomplex.org</a>
@@ -12,10 +12,6 @@ import net.oneread.numtotext.Interfaces.NTTProcessor;
  * ---------------------------------------------------
  */
 
-public class NTTProcessorFactory {
-
-    public static NTTProcessor getRussianProcessor(){
-        return NTTRussianProcessor.getInstance();
-    }
-
+public interface NTTTextToNumProcessor {
+    List<Long> process(List<String> items);
 }

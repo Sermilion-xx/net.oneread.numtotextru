@@ -1,8 +1,8 @@
-package net.oneread.numtotext;
+package net.oneread.numtotext.Processors;
 
 import net.oneread.numtotext.Exception.NanException;
 import net.oneread.numtotext.Exception.NumberOverTrillionException;
-import net.oneread.numtotext.Interfaces.NTTProcessor;
+import net.oneread.numtotext.Interfaces.NTTNumToTextProcessor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +18,7 @@ import java.util.List;
  * ---------------------------------------------------
  */
 
-public class NTTRussianProcessor implements NTTProcessor {
+public class NTTRussianNumToTextNumToTextProcessor implements NTTNumToTextProcessor {
 
     private static final int STR_LESS_THAN_TWENTY = 0;
     private static final int LESS_THAN_HUNDRED = 1;
@@ -26,63 +26,52 @@ public class NTTRussianProcessor implements NTTProcessor {
     private static final int SEX_FEMALE = 1;
     private static final int SEX_MALE = 0;
 
-    private final String[][] sex = {
+    protected final String[][] sex = {
             {"", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"},
             {"", "одна", "две", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"},
     };
-    private final String[][] str1_10_100 = {
+    protected final String[][] str1_10_100 = {
             {"десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать", "двадцать"},
             {"", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"},
             {"", "сто", "двести", "триста", "четыреста", "пятьсот", "шестьсот", "семьсот", "восемьсот", "девятьсот"}
     };
-    private final String[][] forms = {
+    protected final String[][] forms = {
             {"тысяч", "тысяча", "тысячи", "тысячи", "тысячи", "тысяч", "тысяч", "тысяч", "тысяч", "тысяч", "тысяч"},
             {"миллионов", "миллион", "миллиона", "миллиона", "миллиона", "миллионов", "миллионов", "миллионов", "миллионов", "миллионов"},
             {"миллиардов", "миллиард", "миллиарда", "миллиарда", "миллиарда", "миллиардов", "миллиардов", "миллиардов", "миллиардов", "миллиардов"},
             {"триллион", "триллион", "триллиона"},
     };
 
-    private NTTRussianProcessor() {
+    protected NTTRussianNumToTextNumToTextProcessor() {
 
     }
 
-    public static NTTRussianProcessor getInstance() {
-        return new NTTRussianProcessor();
+    static NTTRussianNumToTextNumToTextProcessor getInstance() {
+        return new NTTRussianNumToTextNumToTextProcessor();
     }
 
     //TODO: можно добавить многопоточную работу
 
     /**
      * Публичный метод для начала процесса перевода цифр в строки
+     *
      * @param items лист цифр
      * @return лист цифр в строковом виде
      */
     @Override
-    public List<String> process(List<String> items) throws NanException {
+    public List<String> process(List<Long> items) throws NanException {
         List<String> processedItems = new ArrayList<>();
-        for (String word : items) {
+        for (long word : items) {
             try {
-                if (!isNum(word)) {
-                    throw new NanException(word);
-                }else {
-                    processedItems.add(numToString(Integer.valueOf(word)));
-                }
-            }catch (NanException e){
+                processedItems.add(numToString(word));
+            } catch (NanException e) {
                 e.printStackTrace();
             }
         }
         return processedItems;
     }
 
-    public static boolean isNum(String strNum) {
-        boolean ret = true;
-        try {
-            Integer.parseInt(strNum);
-        }catch (NumberFormatException e) {
-            ret = false;
-        }
-        return ret;
-    }
+
 
     /**
      * Главный метод, инициирующий перевод числа в его строковой вид.
@@ -113,7 +102,6 @@ public class NTTRussianProcessor implements NTTProcessor {
             result.append(" ");
         }
         return result.toString().trim();
-
     }
 
     /**
