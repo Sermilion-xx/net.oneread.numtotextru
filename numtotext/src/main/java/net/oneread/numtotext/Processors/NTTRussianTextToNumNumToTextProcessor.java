@@ -101,6 +101,9 @@ public class NTTRussianTextToNumNumToTextProcessor implements NTTTextToNumProces
         String[] parts = number.split(" ");
         long result = 0L;
         for (String part : parts) {
+            if(result==-1){
+                result = 0;
+            }
             if (keyValue.containsKey(part)) {
                 long num = keyValue.get(part);
                 if (num == 1000 || num == 1000000 || num == 1000000000 || num == 1000000000000L) {
@@ -112,8 +115,8 @@ public class NTTRussianTextToNumNumToTextProcessor implements NTTTextToNumProces
                 }
             } else {
                 try {
-                    throw new NanException(part);
-                } catch (net.oneread.numtotext.Exception.NanException e) {
+                    throw new NanException("Expected string represented number. Actual: "+part);
+                } catch (NanException e) {
                     e.printStackTrace();
                     result = -1;
                 }

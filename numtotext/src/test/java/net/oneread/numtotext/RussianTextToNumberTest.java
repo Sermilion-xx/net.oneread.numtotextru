@@ -96,4 +96,11 @@ public class RussianTextToNumberTest {
         assertTrue(num == 1000000000000L);
     }
 
+    @org.junit.Test
+    public void shouldReturnRu300For1000000000000(){
+        init();
+        long num = numbersProcessor.textToNum("авава 765 тристо");
+        assertTrue(num == 300);
+    }
+
 }
