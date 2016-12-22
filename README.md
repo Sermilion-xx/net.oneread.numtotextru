@@ -1,5 +1,5 @@
 # net.oneread.numtotextru
-This is a small library that will translate integer numbers into its string representation in Russian language.
+This is a small library that will translate integer numbers into its string representation in Russian language, and back.
 
 To use simply copy the .arr file into lib folder and include:
 
