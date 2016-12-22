@@ -18,7 +18,7 @@ import java.util.List;
  * ---------------------------------------------------
  */
 
-public class NTTRussianNumToTextNumToTextProcessor implements NTTNumToTextProcessor {
+public class NTTRussianNumToText implements NTTNumToTextProcessor {
 
     private static final int STR_LESS_THAN_TWENTY = 0;
     private static final int LESS_THAN_HUNDRED = 1;
@@ -42,12 +42,12 @@ public class NTTRussianNumToTextNumToTextProcessor implements NTTNumToTextProces
             {"триллион", "триллион", "триллиона"},
     };
 
-    protected NTTRussianNumToTextNumToTextProcessor() {
+    protected NTTRussianNumToText() {
 
     }
 
-    static NTTRussianNumToTextNumToTextProcessor getInstance() {
-        return new NTTRussianNumToTextNumToTextProcessor();
+    static NTTRussianNumToText getInstance() {
+        return new NTTRussianNumToText();
     }
 
     //TODO: можно добавить многопоточную работу

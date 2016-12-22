@@ -16,11 +16,11 @@ import net.oneread.numtotext.Interfaces.NTTTextToNumProcessor;
 public class NTTProcessorFactory {
 
     public static NTTNumToTextProcessor getRussianNumToTextProcessor(){
-        return NTTRussianNumToTextNumToTextProcessor.getInstance();
+        return NTTRussianNumToText.getInstance();
     }
 
     public static NTTTextToNumProcessor getRussianTextToNumProcessor(){
-        return NTTRussianTextToNumNumToTextProcessor.getInstance();
+        return NTTRussianTextToNum.getInstance();
     }
 
 }

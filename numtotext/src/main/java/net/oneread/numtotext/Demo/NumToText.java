@@ -74,9 +74,9 @@ class NumToText {
 
         NTTWriter writer = new NTTWriter("output.txt");
         for (int i = 0; i < processe.size(); i++) {
-            writer.writeToWriter(processe.get(i));
+            writer.write(processe.get(i));
         }
-        writer.closeWriter();
+        writer.close();
 
         //Перевод текста в числа
         List<String> textList = numToText.loadTextNumbersFromFile("output.txt");

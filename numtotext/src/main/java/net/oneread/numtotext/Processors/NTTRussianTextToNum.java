@@ -18,15 +18,15 @@ import java.util.Map;
  * ---------------------------------------------------
  */
 
-public class NTTRussianTextToNumNumToTextProcessor implements NTTTextToNumProcessor {
+public class NTTRussianTextToNum implements NTTTextToNumProcessor {
 
-    static NTTRussianTextToNumNumToTextProcessor getInstance() {
-        return new NTTRussianTextToNumNumToTextProcessor();
+    static NTTRussianTextToNum getInstance() {
+        return new NTTRussianTextToNum();
     }
 
     private Map<String, Long> keyValue = new HashMap<>();
 
-    private NTTRussianTextToNumNumToTextProcessor() {
+    private NTTRussianTextToNum() {
         keyValue.put("один", 1L);
         keyValue.put("одна", 1L);
         keyValue.put("два", 2L);

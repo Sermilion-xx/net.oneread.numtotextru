@@ -1,8 +1,7 @@
 package net.oneread.numtotext;
 
-import net.oneread.numtotext.Exception.NanException;
 import net.oneread.numtotext.Processors.NTTProcessorFactory;
-import net.oneread.numtotext.Processors.NTTRussianTextToNumNumToTextProcessor;
+import net.oneread.numtotext.Processors.NTTRussianTextToNum;
 
 import org.junit.Test;
 
@@ -20,10 +19,10 @@ import static junit.framework.Assert.assertTrue;
 
 public class RussianTextToNumberTest {
 
-    private NTTRussianTextToNumNumToTextProcessor numbersProcessor;
+    private NTTRussianTextToNum numbersProcessor;
 
     private void init(){
-        numbersProcessor = (NTTRussianTextToNumNumToTextProcessor) NTTProcessorFactory.getRussianTextToNumProcessor();
+        numbersProcessor = (NTTRussianTextToNum) NTTProcessorFactory.getRussianTextToNumProcessor();
     }
 
     @Test

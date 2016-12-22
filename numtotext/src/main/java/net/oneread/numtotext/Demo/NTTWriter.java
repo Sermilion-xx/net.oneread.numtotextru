@@ -35,12 +35,14 @@ class NTTWriter {
         }
     }
 
-    public void closeWriter(){
-        writer.flush();
-        writer.close();
+    public void close(){
+        if (writer!=null) {
+            writer.flush();
+            writer.close();
+        }
     }
 
-    public void writeToWriter(String line){
+    public void write(String line){
         if (writer!=null) {
             writer.println(line);
         }

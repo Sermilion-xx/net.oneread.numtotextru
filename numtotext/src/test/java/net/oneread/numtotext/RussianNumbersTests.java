@@ -1,7 +1,7 @@
 package net.oneread.numtotext;
 
 import net.oneread.numtotext.Processors.NTTProcessorFactory;
-import net.oneread.numtotext.Processors.NTTRussianNumToTextNumToTextProcessor;
+import net.oneread.numtotext.Processors.NTTRussianNumToText;
 
 import static junit.framework.Assert.assertTrue;
 
@@ -17,10 +17,10 @@ import static junit.framework.Assert.assertTrue;
 
 public class RussianNumbersTests {
 
-    private NTTRussianNumToTextNumToTextProcessor numbersProcessor;
+    private NTTRussianNumToText numbersProcessor;
 
     private void init(){
-        numbersProcessor = (NTTRussianNumToTextNumToTextProcessor) NTTProcessorFactory.getRussianNumToTextProcessor();
+        numbersProcessor = (NTTRussianNumToText) NTTProcessorFactory.getRussianNumToTextProcessor();
     }
 
     @org.junit.Test
